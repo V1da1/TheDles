@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Daily Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 My Game Collection</h1>
+        
+        <div class="sections">
+            <div class="section">
+                <h2>📅 Daily Games</h2>
+                <ul class="game-list collapsed" id="dailyGames">
+                    <li class="game-item">
+                        <a href="https://www.nytimes.com/games/wordle/index.html" class="game-link" target="_blank">
+                            🎯 NYT Wordle
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://term.ooo/" class="game-link" target="_blank">
+                            🔤 Termo
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://duotrigordle.com/" class="game-link" target="_blank">
+                            🎲 Duotrigordle
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://spellcheckgame.com/" class="game-link" target="_blank">
+                            ✍️ Spellcheck
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://futbol-11.com/" class="game-link" target="_blank">
+                            ⚽ Futbol11
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://globle-game.com/" class="game-link" target="_blank">
+                            🌍 Globle
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://worldle.teuteuf.fr/" class="game-link" target="_blank">
+                            🗺️ Worldle
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://www.flagle.io/" class="game-link" target="_blank">
+                            🏳️ Flagle
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://flagle-game.com/" class="game-link" target="_blank">
+                            🎌 Flagle Game
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://www.nytimes.com/games/connections" class="game-link" target="_blank">
+                            🔗 NYT Connections
+                        </a>
+                    </li>
+                    <li class="game-item">
+                        <a href="https://www.gamedle.wtf/#" class="game-link" target="_blank">
+                            🎮 Gamedle
+                        </a>
+                    </li>
+                </ul>
+                <button class="expand-button" onclick="toggleList('dailyGames')">Show More</button>
+            </div>
+
+            <div class="section">
+                <h2>🎲 Other Games</h2>
+                <ul class="game-list collapsed" id="otherGames">
+                    <!-- Other games will be added here -->
+                </ul>
+                <button class="expand-button" onclick="toggleList('otherGames')">Show More</button>
+            </div>
+        </div>
+
+        <div class="add-link-form">
+            <h2>➕ Add New Game</h2>
+            <form id="addGameForm">
+                <div class="form-group">
+                    <label for="gameName">Game Name:</label>
+                    <input type="text" id="gameName" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameUrl">Game URL:</label>
+                    <input type="url" id="gameUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameEmoji">Emoji:</label>
+                    <input type="text" id="gameEmoji" placeholder="🎮" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameType">Game Type:</label>
+                    <select id="gameType" required>
+                        <option value="daily">Daily</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit">Add Game</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
