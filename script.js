@@ -18,7 +18,18 @@ const defaultGames = {
 
 // Load saved games from localStorage
 function loadGames() {
-    const savedGames = JSON.parse(localStorage.getItem('games')) || defaultGames;
+    let savedGames;
+    try {
+        savedGames = JSON.parse(localStorage.getItem('games'));
+        // Check if the saved data has the correct structure
+        if (!savedGames || !Array.isArray(savedGames.daily) || !Array.isArray(savedGames.other)) {
+            throw new Error('Invalid data structure');
+        }
+    } catch (e) {
+        // If there's any error (invalid JSON or wrong structure), reset to defaults
+        savedGames = defaultGames;
+        localStorage.setItem('games', JSON.stringify(defaultGames));
+    }
     
     // Clear existing lists
     document.getElementById('dailyGames').innerHTML = '';
