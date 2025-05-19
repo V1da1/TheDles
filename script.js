@@ -1,9 +1,28 @@
+// Default games
+const defaultGames = {
+    daily: [
+        { name: "NYT Wordle", url: "https://www.nytimes.com/games/wordle/index.html", emoji: "🎯" },
+        { name: "Termo", url: "https://term.ooo/", emoji: "🔤" },
+        { name: "Duotrigordle", url: "https://duotrigordle.com/", emoji: "🎲" },
+        { name: "Spellcheck", url: "https://spellcheckgame.com/", emoji: "✍️" },
+        { name: "Futbol11", url: "https://futbol-11.com/", emoji: "⚽" },
+        { name: "Globle", url: "https://globle-game.com/", emoji: "🌍" },
+        { name: "Worldle", url: "https://worldle.teuteuf.fr/", emoji: "🗺️" },
+        { name: "Flagle", url: "https://www.flagle.io/", emoji: "🏳️" },
+        { name: "Flagle Game", url: "https://flagle-game.com/", emoji: "🎌" },
+        { name: "NYT Connections", url: "https://www.nytimes.com/games/connections", emoji: "🔗" },
+        { name: "Gamedle", url: "https://www.gamedle.wtf/#", emoji: "🎮" }
+    ],
+    other: []
+};
+
 // Load saved games from localStorage
 function loadGames() {
-    const savedGames = JSON.parse(localStorage.getItem('games')) || {
-        daily: [],
-        other: []
-    };
+    const savedGames = JSON.parse(localStorage.getItem('games')) || defaultGames;
+    
+    // Clear existing lists
+    document.getElementById('dailyGames').innerHTML = '';
+    document.getElementById('otherGames').innerHTML = '';
     
     // Add saved games to their respective lists
     savedGames.daily.forEach(game => addGameToList(game, 'dailyGames'));
