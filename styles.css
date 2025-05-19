@@ -57,13 +57,17 @@ h1 {
 
 .game-list {
     list-style: none;
-    max-height: 300px;
+    max-height: 250px;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
 
 .game-list.collapsed {
     max-height: 250px;
+}
+
+.game-list:not(.collapsed) {
+    max-height: 2000px; /* This will allow all items to be visible */
 }
 
 .expand-button {
